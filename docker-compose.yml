@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  ariang:
+    image: hurlenko/aria2-ariang
+    ports:
+      - 6800:8080
+    volumes:
+      - /home/amirulandalib/Downloads:/aria2/data
+      - /home/amirulandalib/.config:/aria2/conf
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - RPC_SECRET=abcd1234
+      - ARIA2RPCPORT=6800
+    restart: always
